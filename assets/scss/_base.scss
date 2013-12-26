@@ -1,0 +1,463 @@
+////////////////////////////////////////////////////////////////////////////
+
+//		Page Structure
+
+//		Base
+//			- Defaults
+//		Layout
+//			- Sections of Page
+
+////////////////////////////////////////////////////////////////////////////
+
+// =========================================================================
+// Base
+// =========================================================================
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+html { 
+	font-size: 62.5%; // Default 10px - REM font sizing
+	height: 100%;
+    max-height: 100%;
+}
+
+body {
+	font-family: $baseFont;
+	@include font-size(16);
+	background: $offWhite;
+	color: $body;
+	height: 100%;
+    max-height: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+ul {
+	list-style-type: square;
+	list-style-position:inside;
+	margin: 10px 0 10px 10px;
+	margin: 1rem 0 1rem 1rem;
+}
+
+ol {
+	list-style-type: decimal;
+	list-style-position:inside;
+	margin: 10px 0 10px 10px;
+	margin: 1rem 0 1rem 1rem;
+}
+
+a {
+	@include transition(all, 0.3s, linear);
+	text-decoration: none;
+}
+
+a:link { color: $red; }				/* Unvisited Link */
+a:visited { color: $darkRed; }		/* Visited Link */
+a:hover { color: $lightRed; }		/* Mouse over Link */
+a:focus { outline: none; }			/* Mouse Over Link */
+a:active { color: $lightRed; }		/* Selected Link */
+
+hr {
+	width: 100%;
+	height: 6px;
+	display: block;
+	background: $gray;
+	margin: 30px auto;
+	margin: 3rem auto;
+	border: 0;
+}
+
+input, textarea {
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 15px;
+	padding: 1.5rem;
+	background: $gray;
+	color: $body;
+	font-family: $baseFont;
+	@include font-size(14);
+	@include border-radius(3px);
+}
+
+input:focus, textarea:focus {
+	background: $white;
+	color: $body;
+}
+
+blockquote {
+	width: 100%;
+	padding: 0 0 0 30px;
+	padding: 0 0 0 3rem;
+	margin: 30px 0;
+	margin: 3rem 0;
+	border-left: 10px solid $red;
+	@include font-size(18);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $baseFont;
+	font-weight: bold;
+	position: relative;
+	margin: 0 0 15px 0;
+	margin: 0 0 1.5rem 0;
+	line-height: normal;
+	color: $red;
+}
+
+h1 { @include font-size(36); }
+h2 { @include font-size(32); }
+h3 { @include font-size(28); }
+h4 { @include font-size(24); }
+h5 { @include font-size(20); }
+h6 { @include font-size(16); }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font-weight: inherit;
+	color: inherit;
+}
+
+p {
+	margin: 0 0 30px 0;
+	margin: 0 0 3rem 0;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+dl {
+    margin: 0 0 30px 0;
+	margin: 0 0 3rem 0;
+}
+
+dl dt {
+    float: left;
+    width: 300px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+	margin: 0 0 3rem 0;
+}
+
+dl dd {
+    margin-left: 230px;
+    margin: 0 0 30px 0;
+	margin: 0 0 3rem 0;
+}
+
+mark {
+    background-color: $darkRed;
+}
+
+code, tt {
+    padding: 3px;
+    font-family: monospace, sans-serif;
+    @include font-size(12);
+    white-space: pre;
+    border: 1px solid $darkRed;
+    background: $lightRed;
+    color: $white;
+}
+
+pre {
+    margin: 0 0 30px 0;
+	margin: 0 0 3rem 0;
+    border: 1px solid $darkRed;
+    width: 100%;
+    padding: 10px;
+    padding: 1rem;
+    font-family: monospace, sans-serif;
+    @include font-size(12);
+    white-space: pre;
+    overflow: auto;
+    background: $lightRed;
+    color: $white;
+}
+
+pre code, tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+kbd {
+    font-weight: bold;
+    @include font-size(12);
+}
+
+table {
+    margin: 3rem 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: $white;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid $gray;
+}
+
+table thead, table tfoot {
+	color: $black;
+	background-color: $offWhite;
+}
+
+table tbody > tr:nth-child(odd) > td,
+table tbody > tr:nth-child(odd) > th {
+    background-color: $lightGray;
+}
+
+// =========================================================================
+// Layout
+// =========================================================================
+
+.wrap {
+	max-width: 940px;
+	width: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 30px;
+	padding: 3rem;
+	@include breakpoint(small) {
+		padding: 20px;
+		padding: 2rem;
+	}
+}
+
+article {
+	margin: 0 auto 30px auto;
+	margin: 0 auto 3rem auto;
+	box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.03);
+}
+
+footer {
+	width: 100%;
+	background: $darkBlue;
+}
+
+section {
+	position: relative;
+	padding: 30px;
+	padding: 3rem;
+	background: $white;
+	@include breakpoint(medium) {
+		padding: 20px;
+		padding: 2rem;
+	}
+}
+
+.cover {
+	margin-bottom: 30px;
+	margin-bottom: 3rem;
+	@include box-shadow(0, 1px, 2px, rgba(0, 0, 0, .25));
+	background-size: cover, cover;
+	background-color: $red;
+}
+
+.cover .titles {
+	max-width: 940px;
+	width: auto;
+	margin: 0 auto;
+	text-align: center;
+	padding: 250px 0;
+	padding: 25rem 0;
+	@include breakpoint(small) {
+		padding: 50px 0;
+		padding: 5rem 0;
+	}
+}
+
+.titles h1 {
+	margin: 0;
+	@include font-size(40);
+	color: $white;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+header {
+	background-color: $darkBlue;
+	margin: 0 auto 30px auto;
+	margin: 0 auto 3rem auto;
+	overflow: hidden;
+	clear: both;
+	width: 100%;
+}
+
+.archive-template header,
+.home-template header {
+	margin: 0 auto;
+}
+
+header ul li {
+	display: inline;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+header ul li:last-of-type {
+	margin: 0;
+}
+
+a.blog-logo {
+	float: left;
+	background-color: $red;
+	color: $white;
+	max-width: 100%;
+	padding: 5px 8px;
+	@include no-transition(none, 0s, linear);
+	@include breakpoint(small) {
+		max-width: 50%;
+		float: none;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}
+}
+
+.social {
+	float: right;
+	margin: 0;
+	padding: 0;
+	@include breakpoint(small) {
+		float: left;
+		width: 100%;
+		margin: 20px auto 0 auto;
+		text-align: center;
+	}
+}
+
+.social li a {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	text-indent: -9999px;
+	background-image: url(../images/social.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	@include no-transition(none, 0s, linear);
+	@include breakpoint(large) {
+		display: inline-block;
+		padding: 30px 0 0;
+		padding: 3rem 0 0;
+	}
+}
+
+.social li a.icon-twitter {
+	background-position: 0 0;
+	&:hover {
+		background-position: 0 -35px;
+	}
+}
+
+.social li a.icon-facebook {
+	background-position: -35px 0;
+	&:hover {
+		background-position: -35px -35px;
+	}
+}
+
+.social li a.icon-google-plus {
+	background-position: -70px 0;
+	&:hover {
+		background-position: -70px -35px;
+	}
+}
+
+.post-footer {
+	border-top: 0;
+	background-color: $lighterGray;
+	padding: 30px;
+	padding: 3rem;
+}
+
+.details {
+	margin: 0;
+	padding: 0;
+}
+
+.details li {
+	display: inline;
+}
+
+.gist table {
+    margin: 0;
+}
+
+.gist .line-number {
+    min-width: 25px;
+}
+
+.pagination {
+    position: relative;
+    max-width: 940px;
+    margin: 0 auto 3rem auto;
+    padding: 30px;
+    padding: 3rem;
+    text-align: center;
+    background: $white;
+    box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.03);
+}
+
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    padding: 0;
+    text-decoration: none;
+    @include breakpoint(small) {
+    	position: static;
+        margin: 10px 0;
+        margin: 1rem 0;
+    }
+}
+
+.older-posts {
+    right: 30px;
+}
+
+.page-number {
+    display: inline-block;
+    @include breakpoint(small) {
+    	display: block;
+    }
+}
+
+.newer-posts {
+    left: 30px;
+}
+
+.comments {
+	margin-bottom: 30px;
+	margin-bottom: 3rem;
+	box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.03);
+}
+
+footer p {
+	margin: 0;
+	color: $white;
+}

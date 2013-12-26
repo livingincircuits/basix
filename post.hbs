@@ -1,0 +1,28 @@
+{{!< default}}
+
+{{>header}}
+
+<div class="wrap">
+
+	<article class="{{post_class}}">
+	{{#post}}
+		<section>
+			<h1>{{title}}</h1>
+			<span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+			{{content}}
+		</section>
+		{{#if author}}
+		<section class="post-footer">
+			<h4>{{author.name}}</h4>
+			<p>{{author.bio}}</p>
+		</section>
+		{{/if}}
+	{{/post}}
+	</article>
+
+
+	<section class="comments">
+		{{>comments}}
+	</section>
+
+</div>
