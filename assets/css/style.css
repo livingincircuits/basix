@@ -749,7 +749,7 @@ a.blog-logo {
   padding: 0; }
 
 .details li {
-  display: inline; }
+  display: block; }
 
 .gist table {
   margin: 0; }

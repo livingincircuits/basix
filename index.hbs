@@ -19,9 +19,11 @@
 		<section class="post-footer post-meta">
 		<ul class="details">
 			<li><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></li>  
-			<li>
-				{{#if tags}}{{tags}}{{/if}}
-			</li>
+			{{#if tags}}
+				<li>
+					 Tagged as: <strong>{{tags}}</strong>
+				</li>
+			{{/if}}
 		</ul> 
 		</section>
 	</article>
