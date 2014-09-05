@@ -1,0 +1,140 @@
+// =========================================================================
+// Theme - Specific Theme
+// =========================================================================
+
+// =========================================================================
+// Core Styling
+// =========================================================================
+
+.main-content hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $color__gray;
+    padding: 0;
+    @include rem(margin, 1rem 0 2rem 0);
+}
+
+.main-content blockquote {
+    @include rem(margin, 2rem 0 2rem -2.5rem);
+    @include rem(padding, 0 0 0 2rem);
+    border-left: 4px solid $color__gray;
+}
+
+.main-content blockquote p {
+    @include rem(margin, 1rem 0);
+    font-style: italic;
+}
+
+.main-content blockquote small {
+    display: inline-block;
+    margin: 0.8em 0 0.8em 1.5em;
+    @include rem(margin, 1rem 0 1rem 2rem);
+    @include rem(font-size, 1.2rem);
+}
+
+.main-content blockquote cite {
+    font-weight: 600;
+}
+
+.main-content a {
+	color: $color__primary;
+	text-decoration: none;
+	@include state() {
+		text-decoration: underline;
+	}
+}
+
+.main-content img {
+	@include rem(padding, 0 0 2rem 0);
+}
+
+.main-content p {
+	@include rem(margin, 0 0 2rem 0);
+}
+
+.main-content ul {
+	@include rem(margin, 0 0 2rem 2rem);
+	@include rem(padding, 0 0 1rem 0);
+	ul {
+		@include rem(padding, 0 0 0 1rem);
+	}
+	list-style-type: square;
+}
+
+.main-content ol {
+	@include rem(margin, 0 0 2rem 2rem);
+	@include rem(padding, 0 0 1rem 1rem);
+	ol {
+		@include rem(padding, 0 0 0 1rem);
+	}
+	li {
+		list-style-type: decimal;
+	}
+}
+
+.main-content dl dd {
+    @include rem(margin, 0 0 2rem 0);
+}
+
+.main-content table {
+	table-layout: fixed;
+	width: 100%;
+	@include rem(margin, 0 0 2rem 0);
+	border-collapse: collapse;
+	border-spacing: 0;
+	@include rem(font-size, 1.4rem);
+	tbody tr:nth-child(2n+2) {
+		@include rgba(background-color, $color__gray, 0.5);
+	}
+	thead tr, tfoot tr {
+		text-align: center;
+		background: $color__gray--dark;
+		color: $white;
+		border: 1px solid $color__gray;
+		th {
+			@include rem(padding, .5rem);
+		}
+	}
+	tbody tr {
+		background: $white;
+		border: 1px solid $color__gray;
+		text-align: left;
+		@include transition(all, 0.125s, linear);
+		td {
+			@include rem(padding, 1rem);
+			color: $color__gray--dark;
+			font-weight: normal;
+			border: 1px solid $color__gray;
+		}
+		@include state() {
+			background: $color__gray--dark;
+			td {
+				color: $white;
+			}
+		}
+	}
+}
+
+.main-content figure {
+	position: relative;
+	float: left;
+	@include rem(margin, 0 2rem 0 0);
+  	img {
+  		display: block;
+  		@include rem(padding, .5rem);
+  		background-color: $white;
+		border: 2px solid $color__gray;
+  	}
+  	figcaption {
+  		@include rem(font-size, 1.4rem);
+  		position: absolute;
+		@include rem(bottom, .7rem);
+		@include rem(left, .7rem);
+		@include rem(margin, 0 .7rem 0 0);
+		@include rem(padding, .5rem);
+		z-index: 10;
+		color: $white;
+		@include rgba(background-color, $color__primary, 0.8);
+  	}
+}

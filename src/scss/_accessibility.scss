@@ -1,0 +1,22 @@
+// =========================================================================
+// Modules - Reusable Modular Parts
+// =========================================================================
+
+// =========================================================================
+// Skip to Content
+// =========================================================================
+
+.skip-to-content {
+	@include rem(padding, 2rem);
+	position: absolute;
+	top: -100px;
+	left: 30px;
+	z-index: 1000;
+	color: $white;
+	@include rem(font-size, 2.1rem);
+	&:focus {
+		position: absolute;
+		top: 0;
+		background: $color__gray--dark;
+	}
+}

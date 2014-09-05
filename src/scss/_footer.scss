@@ -1,0 +1,49 @@
+// =========================================================================
+// Layout - Sections of Page
+// =========================================================================
+
+// =========================================================================
+// Footer
+// =========================================================================
+
+.site-footer {
+	@include rem(font-size, 1.6rem);
+	border-top: 1px solid $color__gray;
+	border-bottom: 1px solid $color__gray;
+	a {
+		color: $color__gray--dark;
+		text-decoration: underline;
+		@include state() {
+			color: $color__primary;
+			text-decoration: none;
+		}
+	}
+	@include breakpoint(small) {
+		text-align: center;
+	}
+}
+
+	.copyright {
+		float: left;
+		width: 50%;
+		@include rem(padding, 2rem 0);
+		border-right: 1px solid $color__gray;
+		@include breakpoint(medium) {
+			border-right: 0;
+			width: 100%;
+			float: none;
+			@include rem(padding, 2rem 0 0 0);
+		}
+	}
+
+	.ghost {
+		float: right;
+		width: 50%;
+		@include rem(padding, 2rem 0);
+		text-align: right;
+		@include breakpoint(medium) {
+			text-align: center;
+			width: 100%;
+			float: none;
+		}
+	}

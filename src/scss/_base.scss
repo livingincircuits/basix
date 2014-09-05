@@ -1,0 +1,127 @@
+// =========================================================================
+// Base - Defaults and Content
+// =========================================================================
+
+*, *:before, *:after {
+	@extend %box-sizing;
+}
+
+html {
+	font-size: 62.5%; // Used for REM so please don't delete 
+	overflow-x: hidden;
+	height: 100%;
+	max-height: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	height: 100%;
+	font-family: $baseFont;
+	font-size: 1.9em;
+	line-height: 1.5;
+	color: $color__gray--dark;
+    background-color: $white;
+	-webkit-font-smoothing: antialiased;
+    @include breakpoint(tiny) {
+        font-size: 1.6em;
+    }
+}
+
+a {
+	text-decoration: none;
+	@include transition(all, 0.125s, linear);
+	@include breakpoint(small) {
+		@include no-transition(0);
+	}
+}
+
+:focus {
+	outline: none;
+}
+
+::selection {
+	color: $white;
+	background: $color__gray--dark;
+}
+
+::-moz-selection {
+	color: $white;
+	background: $color__gray--dark;
+}
+
+::selection {
+	color: $white;
+	background: $color__gray--dark;
+}
+
+::-moz-selection {
+	color: $white;
+	background: $color__gray--dark;
+}
+
+img {
+	max-width: 100%;
+}
+
+mark {
+    color: $white;
+    background-color: $color__primary;
+}
+
+code, tt {
+    @include rem(padding, .1rem 3rem);
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+    border: 1px solid $color__primary;
+    @include rgba(background-color, $color__primary, 0.6, $color__primary);
+}
+
+pre {
+    @include rem(margin, 0 0 1.7rem 0);
+    border: 1px solid $color__primary;
+    width: 100%;
+    @include rem(padding, 1rem);
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.9em;
+    white-space: pre;
+    overflow: auto;
+    @include rgba(background-color, $color__primary, 0.6, $color__primary);
+}
+
+pre code, tt {
+    font-size: inherit;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+kbd {
+    display: inline-block;
+    @include rem(padding, .1rem .8rem);
+    font-size: 0.9em;
+    font-weight: 600;
+    color: $white;
+    background: $color__gray--dark;
+}
+
+iframe, .fluid-width-video-wrapper {
+    display: block;
+    @include rem(margin, 0 0 2rem 0);
+}
+
+.fluid-width-video-wrapper iframe {
+    margin: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $color__gray;
+    padding: 0;
+    @include rem(margin, 1rem 0);
+    clear: both;
+}

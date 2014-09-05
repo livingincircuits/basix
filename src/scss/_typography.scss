@@ -1,0 +1,31 @@
+// =========================================================================
+// Typography - Resets and Placeholders
+// =========================================================================
+
+p {
+	@include rem(margin, 0);
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h1 { @include rem(font-size, 4.8rem); @include breakpoint(medium) { @include rem(font-size, 3.8rem); } }
+h2 { @include rem(font-size, 4.2rem); @include breakpoint(medium) { @include rem(font-size, 3.2rem); } }
+h3 { @include rem(font-size, 3.8rem); @include breakpoint(medium) { @include rem(font-size, 2.8rem); } }
+h4 { @include rem(font-size, 3.2rem); @include breakpoint(medium) { @include rem(font-size, 2.2rem); } }
+h5 { @include rem(font-size, 2.8rem); @include breakpoint(medium) { @include rem(font-size, 1.8rem); } }
+h6 { @include rem(font-size, 2.2rem); @include breakpoint(medium) { @include rem(font-size, 1.6rem); } }
+
+h1, h2, h3, h4, h5, h6 {
+	@include rem(margin, 0 0 2rem 0);
+	color: $color__gray--dark;
+	line-height: 1.2;
+	font-family: $titleFont;
+	font-weight: 300;
+	a {
+		color: inherit;
+	}
+}

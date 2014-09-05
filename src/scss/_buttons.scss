@@ -1,0 +1,75 @@
+// =========================================================================
+// Modules - Reusable Modular Parts
+// =========================================================================
+
+// =========================================================================
+// Buttons and Icons
+// =========================================================================
+
+// ==================================
+// Standard Btn
+// ==================================
+
+.btn {
+	width: auto;
+	display: inline-block;
+	cursor: pointer;
+	margin-bottom: .5em;
+	padding: 1em;
+	outline: none;
+	text-decoration: none;
+	@include rem(font-size, 1.6rem);
+	line-height: 1em;
+	color: $white;
+	background-color: $color__primary;
+	@extend %gradient-tran-white;
+	text-align: center;
+	font-family: $sanSerif;
+	@include transition(background-color, 0.3s, linear);
+	@include state() {
+		color: $color__primary;
+		background-color: $white;
+	}
+}
+
+// =========================================================================
+// Social
+// =========================================================================
+
+$networks: (
+	facebook: $facebook,
+	twitter: $twitter,
+	google: $google
+);
+
+@each $network, $icolor in $networks {
+	.social__link--#{$network} a:focus,
+	.social__link--#{$network} a:hover,
+	.social__link--#{$network} a:active {
+		color: $icolor;
+		background-color: $white;
+	}
+}
+
+.social__link {
+	margin: 0;
+	display: inline-block;
+}
+
+	.social__link a {
+		display: inline-block;
+		@include rem(width, 4rem);
+		@include rem(height, 4rem);
+		@include rem(margin, 0 1rem 0 0);
+		text-align: center;
+		@include rem(font-size, 2.2rem );
+		@include rem(line-height, 4rem);
+		color: $white;
+		background-color: $color__primary;
+	}
+
+.share {
+	@include breakpoint(small) {
+		text-align: center;
+	}
+}

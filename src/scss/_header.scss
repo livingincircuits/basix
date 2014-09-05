@@ -1,0 +1,76 @@
+// =========================================================================
+// Layout - Sections of Page
+// =========================================================================
+
+// =========================================================================
+// Header
+// =========================================================================
+
+.hero {
+	height: 100%;
+	width: 100%;
+}
+
+	.hero__text {
+		width: 24em;
+		position: fixed;
+		top: 25%;
+		left: 50%;
+		border: .5em solid $white;
+		margin-left: -12em;
+		@include rem(padding, 4rem);
+		@include breakpoint(medium) {
+			width: auto;
+			position: absolute;
+			left: 0;
+			right: 0;
+			text-align: center;
+			@include rem(margin, 0 2rem);
+			@include rem(padding, 2rem);
+		}
+	}
+
+		.hero__title, .hero__desc {
+			color: $white;
+		}
+
+.site-header {
+	@extend %clearfix;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: $color__gray--dark;
+	color: $white;
+}
+
+	.site-logo {
+	    display: block;
+	    float: left;
+	    img {
+		    display: block;
+		    width: auto;
+		}
+	}
+
+	.back-btn {
+	    display: inline-block;
+	    float: left;
+	}
+
+	.subscribe-btn {
+	    float: right;
+	}
+
+	.site-nav {
+	    position: relative;
+	    @include rem(padding, 6rem);
+	    @include breakpoint(medium) {
+	    	@include rem(padding, 3rem);
+	    }
+	    @extend %clearfix;
+	}
+
+	.site-title {
+		color: $white;
+	}

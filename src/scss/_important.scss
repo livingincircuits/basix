@@ -1,0 +1,25 @@
+// =========================================================================
+// Important - Cascade Dependant Code
+// =========================================================================
+
+.visually-hidden {
+	@extend %visuallyhidden;
+	@extend %hidden;
+}
+
+div.ie {
+	@include rem(margin, 1.5rem 0);
+	background-color: $color__primary;
+	color: $white;
+	text-align: center;
+	padding: 15px 0;
+	p {
+		a {
+			color: $white;
+			text-decoration: underline;
+			@include state() {
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,146 @@
+// =========================================================================
+// Placeholders
+// =========================================================================
+
+// =========================================================================
+// Box Sizing - @extend %box-sizing;
+// =========================================================================
+
+%box-sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	&:before, &:after { 
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
+// =========================================================================
+// Clearfix - @extend %clearfix;
+// =========================================================================
+
+%clearfix {
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+	*zoom: 1;
+}
+
+// =========================================================================
+// Zero List Styling - @extend %no-list-style;
+// =========================================================================
+
+%no-list-style {
+	list-style-type: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+// =========================================================================
+// Hide Text - @extend %hide-text;
+// =========================================================================
+
+%hide-text {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+// =========================================================================
+// Inline Block - @extend %ie7-hack;
+// =========================================================================
+
+%ie7-hack {
+	*display: inline;
+	zoom: 1;
+}
+
+// ==========================================================================
+// Image Replacement - @extend %ir;
+// ==========================================================================
+
+%ir {
+  	background-color: transparent;
+  	border: 0;
+  	overflow: hidden;
+  	*text-indent: -9999px;
+  	&:before {
+    	content: "";
+    	display: block;
+    	width: 0;
+    	height: 150%;
+  	}
+}
+
+// Hide from screenreaders and browsers
+%hidden {
+  	display: none !important;
+  	visibility: hidden;
+}
+
+// Hide visually but available for screenreaders
+%visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+  	height: 1px;
+  	margin: -1px;
+  	overflow: hidden;
+  	padding: 0;
+  	position: absolute;
+  	width: 1px;
+  	&.focusable:active,
+  	&.focusable:focus {
+    	clip: auto;
+    	height: auto;
+    	margin: 0;
+    	overflow: visible;
+    	position: static;
+    	width: auto;
+  	}
+}
+
+// Hide visually and from screenreaders, layout maintained
+%invisible {
+	visibility: hidden;
+}
+
+// ==========================================================================
+// Center Elements - @extend %absolute-center;
+// ==========================================================================
+
+// set container to relative
+%absolute-center {
+  	width: 50%;
+  	height: 50%;
+  	overflow: auto;
+  	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+// =========================================================================
+// Gradients - @extend %gradient-left-gray;
+// =========================================================================
+
+%gradient-tran-gray {
+  	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(197,197,197,1) 50%, rgba(0,0,0,0) 100%);
+  	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(197,197,197,1)), color-stop(100%,rgba(0,0,0,0)));
+  	background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(197,197,197,1) 50%,rgba(0,0,0,0) 100%);
+  	background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(197,197,197,1) 50%,rgba(0,0,0,0) 100%);
+  	background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(197,197,197,1) 50%,rgba(0,0,0,0) 100%);
+  	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(197,197,197,1) 50%,rgba(0,0,0,0) 100%);
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5c5c5', endColorstr='#c5c5c5',GradientType=1 );
+}
+
+.ie9 .gradient-tran-gray {
+	filter: none;
+}
+
+%gradient-tran-white {
+  background-image: -webkit-gradient(linear,left 0,left 100%,from(rgba(255,255,255,0.15)),to(rgba(255,255,255,0)));
+  background-image: -webkit-linear-gradient(top,rgba(255,255,255,0.15),0,rgba(255,255,255,0),100%);
+  background-image: -moz-linear-gradient(top,rgba(255,255,255,0.15) 0,rgba(255,255,255,0) 100%);
+  background-image: linear-gradient(to bottom,rgba(255,255,255,0.15) 0,rgba(255,255,255,0) 100%);
+}

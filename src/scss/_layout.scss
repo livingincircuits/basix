@@ -1,0 +1,83 @@
+// =========================================================================
+// Layout - Sections of Page
+// =========================================================================
+
+// =========================================================================
+// Wrappers
+// =========================================================================
+
+.wrapper {
+	position: relative;
+	@include rem(max-width, 70rem);
+	margin-left: auto;
+	margin-right: auto;
+	@include rem(padding, 0 2rem);
+	@extend %clearfix;
+}
+
+// =========================================================================
+// Listed Items
+// =========================================================================
+
+.post {
+	a {
+		color: $color__gray--dark;
+		@include state() {
+			color: $color__primary;
+			.post-title {
+				color: $color__primary;
+			}
+		}
+	}
+}
+
+.post-meta {
+	@include rem(font-size, 1.6rem);
+	font-style: italic;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+// =========================================================================
+// Bio Area
+// =========================================================================
+
+.author-image {
+	float: left;
+	width: 45%;
+	@include rem(margin, 2rem 0 3rem 0);
+	@include breakpoint(small) {
+		float: none;
+		width: 100%;
+		@include rem(margin, 2rem 0);
+	}
+	.img {
+		display: block;
+		height: 256px;
+		width: 256px;
+		@include border-radius(50%);
+		@include breakpoint(small) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.author {
+	float: left;
+	width: 55%;
+	@include rem(margin, 2rem 0 3rem 0);
+	@include breakpoint(small) {
+		float: none;
+		width: 100%;
+		@include rem(margin, 2rem 0);
+		text-align: center;
+	}
+}
+
+.author-meta {
+	@include rem(font-size, 1.6rem);
+	font-style: italic;
+	font-weight: 600;
+	line-height: 1.2;
+}
