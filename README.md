@@ -1,51 +1,37 @@
 # Basix
 
-A minimal and responsive theme for [Ghost](http://github.com/tryghost/ghost/)
+Minimal Ghost Theme
 
-Visit Ghost at: [www.ghost.org](http://www.ghost.org "Ghost")
+### Prerequisites (If building upon existing theme)
 
-## Prerequisites
+1. [Node.js](http://nodejs.org/)
+2. [Sass](http://sass-lang.com/)
+3. [Gulp](http://gulpjs.com/)
 
-1. Node.js
-2. Ruby
-3. Sass
-4. Grunt
+### Node Installation
 
-## Installation
+* Visit [Node.js](http://nodejs.org/)
+* Download the latest version of Node
 
-* Clone (or fork) this repository into your /content/themes/ folder in Ghost.
-* Run `npm install` in the Basix directory to install grunt modules.
-* Run `grunt` to build the Sass files, or `grunt watch` if you decide to make changes.
-* Open site's dashboard (`http://yoursite.com/ghost`).
-* Navigate to "Settings".
-* At the very bottom find "Theme" line — select this theme and save!
+### Sass Installation
 
-##Configuration
+* From terminal - sudo gem install sass - [Visit the Sass install instructions for more info](http://sass-lang.com/install)
+* Always ensure you have the latest and greatest version of Sass. From terminal - sudo gem update sass
 
-### Ghost Settings
+### Gulp Installation From terminal
 
-1. In dashboard open "Settings" page.
-2. Fill in info about your blog and upload it's logo and cover.
-3. Open "User Section".
-4. Fill in all applicable info about yourself.
+* npm install -g gulp (globally)
+* cd to your project root (cd var/www etc..)
+* npm install
+* run gulp by typing 'gulp'
+* The style.css file will be missing until you save a .scss file.
+* [Visit the docs for more info](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
-### Theme Settings
+### .gitignore
 
-Navigate to the theme folder and open "partials".
+Set up .gitignore with the following
 
-#####Comments
-
-Ghost doesn't have a native comment system, so we'll have to use Disqus.
-
-1. Go to [disqus.com](http://disqus.com) and sign up. Or in, if you already have an account.
-2. Register new site and get the code.
-3. Open "comments.hbs" and paste the Disqus code in there.
-
-#####Analytics
-
-1. Open "analytics.hbs"
-2. Paste the code you aqquired from your analytics service and save.
-
-##Credits
-
-Many thanks to all who have made [www.ghost.org](http://www.ghost.org "Ghost") possible.
+* npm-debug.log
+* .DS_Store
+* node_modules
+* .sass-cache
