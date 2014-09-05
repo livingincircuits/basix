@@ -1,0 +1,17 @@
+{{!< default}}
+
+<header class="site-header spacer {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+
+    <nav class="site-nav">
+        <a class="back-btn btn" href="{{@blog.url}}">Home</a>
+        <a class="subscribe-btn btn" href="{{@blog.url}}/tag/{{tag.slug}}/rss/">Subscribe</a>
+    </nav>
+
+    <h1 class="site-title central spacer">A {{pagination.total}}-post collection</h1>
+
+</header>
+
+
+<main id="content" class="wrapper spacer" role="main">
+    {{> "loop"}}
+</main>

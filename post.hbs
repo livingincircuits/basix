@@ -1,28 +1,90 @@
 {{!< default}}
 
-{{>header}}
+{{#post}}
 
-<div class="wrap">
+<header class="site-header spacer {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
 
-	<article class="{{post_class}}">
-	{{#post}}
-		<section>
-			<h1>{{title}}</h1>
-			<span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
-			{{content}}
-		</section>
-		{{#if author}}
-		<section class="post-footer">
-			<h4>{{author.name}}</h4>
-			<p>{{author.bio}}</p>
-		</section>
-		{{/if}}
-	{{/post}}
-	</article>
+    <nav class="site-nav">
+        <a class="back-btn btn" href="{{@blog.url}}">Home</a>
+        <a class="subscribe-btn btn" href="{{@blog.url}}/tag/{{tag.slug}}/rss/">Subscribe</a>
+    </nav>
 
+    <h1 class="site-title central spacer">{{title}}</h1>
 
-	<section class="comments">
-		{{>comments}}
-	</section>
+</header>
 
-</div>
+<main id="content" class="wrapper spacer" role="main">
+
+    <article class="{{post_class}}">
+
+        <header class="post-meta main-content">
+            <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+        </header>
+
+        <hr class="spacer">
+
+        <section class="post-content main-content">
+            {{content}}
+        </section>
+
+        <footer class="post-footer">
+
+        {{#author}}
+
+            <hr>
+
+            {{#if image}}
+            <figure class="author-image">
+                <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+            </figure>
+            {{/if}}
+
+            <section class="author main-content">
+                <h4><a href="{{url}}">{{name}}</a></h4>
+
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{else}}
+                    <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                {{/if}}
+                <div class="author-meta">
+                    {{#if location}}<p>I'm based in the {{location}}</p>{{/if}}
+                    {{#if website}}<p><a href="{{website}}">{{website}}</a></p>{{/if}}
+                </div>
+            </section>
+
+            <hr>
+
+        {{/author}}
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <ol class="site-social">
+                    <li class="social__link--facebook social__link">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="fa fa-facebook">
+                            <span class="visually-hidden">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="social__link--twitter social__link">
+                        <a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="fa fa-twitter">
+                            <span class="visually-hidden">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="social__link--google social__link">
+                        <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="fa fa-google">
+                            <span class="visually-hidden">Google+</span>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+
+        </footer>
+
+    {{/post}}
+
+    </article>
+
+</main>

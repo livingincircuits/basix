@@ -1,0 +1,21 @@
+{{#foreach posts}}
+<article class="spacer {{post_class}}">
+    <a href="{{url}}">
+        <header class="post-header">
+            <h2 class="post-title">{{{title}}}</h2>
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt words="30"}}...</p>
+        </section>
+    </a>
+
+    <hr>
+
+    <footer class="post-meta main-content">
+        {{tags prefix=" Tag: "}} 
+        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> 
+    </footer>
+</article>
+{{/foreach}}
+
+{{pagination}}

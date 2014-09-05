@@ -1,0 +1,44 @@
+{{!< default}}
+
+{{#author}}
+
+    <header class="site-header spacer {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+
+        <nav class="site-nav">
+            <a class="back-btn btn" href="{{@blog.url}}">Home</a>
+            <a class="subscribe-btn btn" href="{{@blog.url}}/tag/{{tag.slug}}/rss/">Subscribe</a>
+        </nav>
+
+        <h1 class="site-title central spacer">{{name}}</h1>
+
+    </header>
+
+    <section class="wrapper spacer">
+        {{#if image}}
+        <figure class="author-image">
+            <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+        </figure>
+        {{/if}}
+
+        <section class="author main-content">
+            <h4><a href="{{url}}">{{name}}</a></h4>
+
+            {{#if bio}}
+                <p>{{bio}}</p>
+            {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            {{/if}}
+            <div class="author-meta">
+                {{#if location}}<p>I'm based in the {{location}}</p>{{/if}}
+                {{#if website}}<p><a href="{{website}}">{{website}}</a></p>{{/if}}
+            </div>
+        </section>
+
+        <hr>
+    </section>
+
+{{/author}}
+
+<main id="content" class="wrapper" role="main">
+    {{> "loop"}}
+</main>
