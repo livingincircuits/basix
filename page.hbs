@@ -1,15 +1,27 @@
 {{!< default}}
 
-{{>header}}
+{{#post}}
+    
+    <header class="site-header spacer {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
 
-<div class="wrap">
+        <nav class="site-nav">
+            <a class="back-btn btn" href="{{@blog.url}}">Home</a>
+            <a class="subscribe-btn btn" href="{{@blog.url}}/tag/{{tag.slug}}/rss/">Subscribe</a>
+        </nav>
 
-	<article class="{{post_class}}">
-	{{#post}}
-		<section>
-			{{content}}
-		</section>
-	{{/post}}
-	</article>
+        <h1 class="site-title central spacer">{{title}}</h1>
 
-</div>
+    </header>
+
+    <main id="content" class="wrapper spacer" role="main">
+
+        <article class="{{post_class}}">
+
+            <section class="post-content">
+                {{content}}
+            </section>
+        
+        </article>
+
+    </main>
+{{/post}}

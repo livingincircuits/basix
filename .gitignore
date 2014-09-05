@@ -1,4 +1,4 @@
-
-*.scssc
-
-*.scssc
+npm-debug.log
+.DS_Store
+node_modules
+.sass-cache
