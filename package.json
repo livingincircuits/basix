@@ -1,6 +1,6 @@
 {
-  "name": "Basix",
-  "version": "0.0.1",
+  "name": "basix",
+  "version": "0.0.2",
   "description": "Ghost Theme",
   "dependencies": {},
   "devDependencies": {
