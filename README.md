@@ -29,15 +29,6 @@ See the demo : http://basix.ghost.io/
 * The style.css file will be missing until you save a .scss file.
 * [Visit the docs for more info](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
-## .gitignore
-
-Set up .gitignore with the following
-
-* npm-debug.log
-* .DS_Store
-* node_modules
-* .sass-cache
-
 ##Credits
 
 Many thanks to all who have made [www.ghost.org](http://www.ghost.org "Ghost") possible.
