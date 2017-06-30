@@ -2,8 +2,6 @@
 
 Minimal Ghost Theme
 
-See the demo : http://basix.ghost.io/
-
 ## Prerequisites (If building upon existing theme)
 
 1. [Node.js](http://nodejs.org/)
