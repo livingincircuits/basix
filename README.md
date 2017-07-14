@@ -29,7 +29,7 @@ Minimal Ghost Theme
 * The style.css file will be missing until you save a .scss file.
 * [Visit the docs for more info](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
-##Credits
+## Credits
 
 Many thanks to all who have made [www.ghost.org](http://www.ghost.org "Ghost") possible.
 
