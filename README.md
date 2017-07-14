@@ -2,6 +2,8 @@
 
 Minimal Ghost Theme
 
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+
 ## Prerequisites (If building upon existing theme)
 
 1. [Node.js](http://nodejs.org/)
